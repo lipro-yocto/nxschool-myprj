@@ -1,0 +1,22 @@
+# NXS_BBLAYERS_CONF_VERSION is increased each time build/conf/bblayers.conf
+# changes incompatibly
+NXS_BBLAYERS_CONF_VERSION = "1"
+
+BBPATH = "${TOPDIR}"
+BSPDIR := "${@os.path.abspath('##OEROOT##/../..')}"
+BBFILES ?= ""
+
+BBLAYERS ?= " \
+  ${BSPDIR}/sources/poky/meta \
+  ${BSPDIR}/sources/poky/meta-poky \
+  ${BSPDIR}/sources/poky/meta-yocto-bsp \
+  \
+  ${BSPDIR}/sources/openembedded/meta-oe \
+  ${BSPDIR}/sources/openembedded/meta-python \
+  ${BSPDIR}/sources/openembedded/meta-initramfs \
+  ${BSPDIR}/sources/openembedded/meta-filesystems \
+  ${BSPDIR}/sources/openembedded/meta-networking \
+  ${BSPDIR}/sources/openembedded/meta-multimedia \
+  \
+  ${BSPDIR}/sources/myprj/meta-nxschool \
+  "
